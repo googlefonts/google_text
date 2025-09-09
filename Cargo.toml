@@ -1,0 +1,21 @@
+[package]
+name = "google-text"
+version = "0.1.0"
+readme = "README.md"
+edition = "2024"
+categories = ["text-processing", "parsing", "graphics"]
+description = "Reexporting Google Fonts text processing crates"
+
+
+[dependencies]
+font-types = { version = "0.10" }
+read-fonts = { version = "0.35" }
+write-fonts = { version = "0.43", optional = true }
+skrifa = { version = "0.37", optional = true }
+harfrust = { version = "0.2.0", optional = true }
+
+[features]
+default = ["skrifa", "write-fonts", "harfrust"]
+skrifa = ["dep:skrifa"]
+write-fonts = ["dep:write-fonts"]
+harfrust = ["dep:harfrust"]
